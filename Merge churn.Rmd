@@ -1,0 +1,20 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, eval=FALSE, include=FALSE}
+train =  read.csv("train.csv")
+result = read.csv("combined_data.csv")
+result = full_join(result,train,by = c("user_id"="msno"))
+write.csv(result, file = "final_with_churn.csv")
+```
+
+```{r}
+train =  read.csv("final_with_churn.csv")
+```
+
